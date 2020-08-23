@@ -5,7 +5,9 @@ import PT from 'prop-types';
 import Aux from '../../hoc/Aux';
 
 const Section = styled.section``;
-const Main = styled.main``;
+const Main = styled.main`
+  margin-top: 16px;
+`;
 
 const Layout = (props) => {
   const { children } = props;

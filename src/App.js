@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Layout from './components/Layout/Layout';
+import Builder from './containers/Builder/Builder';
 
 const Section = styled.section`
   width: 300px;
@@ -13,7 +14,7 @@ const Section = styled.section`
 const App = () => (
   <Section>
     <Layout>
-      <p>testing</p>
+      <Builder />
     </Layout>
   </Section>
 );
