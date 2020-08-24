@@ -46,4 +46,8 @@ const Ingredient = (props) => {
   return ingredient;
 };
 
+Ingredient.propTypes = {
+  type: PT.string.isRequired,
+};
+
 export default Ingredient;
