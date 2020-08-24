@@ -1,4 +1,6 @@
 import React from 'react';
+import PT from 'prop-types';
+import shortid from 'shortid';
 import styled from 'styled-components';
 
 import Ingredient from './Ingredient/Ingredient';
@@ -28,15 +30,25 @@ const Wrapper = styled.section`
   }
 `;
 
-const Burger = () => (
-  <Wrapper>
-    <Ingredient type="bread-top" />
-    <Ingredient type="bacon" />
-    <Ingredient type="cheese" />
-    <Ingredient type="meat" />
-    <Ingredient type="salad" />
-    <Ingredient type="bread-bottom" />
-  </Wrapper>
-);
+const Burger = (props) => {
+  const { ingredients } = props;
+  const transformedIngredients = Object.keys(ingredients)
+    .map((ingKey) => [...Array(ingredients[ingKey])]
+      .map(() => <Ingredient key={shortid.generate()} type={ingKey} />));
+
+  console.log(transformedIngredients);
+
+  return (
+    <Wrapper>
+      <Ingredient type="bread-top" />
+      {transformedIngredients}
+      <Ingredient type="bread-bottom" />
+    </Wrapper>
+  );
+};
+
+Burger.propTypes = {
+  ingredients: PT.objectOf(PT.number).isRequired,
+};
 
 export default Burger;
