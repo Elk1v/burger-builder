@@ -36,8 +36,6 @@ const Burger = (props) => {
     .map((ingKey) => [...Array(ingredients[ingKey])]
       .map(() => <Ingredient key={shortid.generate()} type={ingKey} />));
 
-  console.log(transformedIngredients);
-
   return (
     <Wrapper>
       <Ingredient type="bread-top" />

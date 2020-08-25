@@ -7,7 +7,6 @@ import Builder from './containers/Builder/Builder';
 const Section = styled.section`
   width: 300px;
   height: 300px;
-  
 `;
 
 const App = () => (
