@@ -32,9 +32,15 @@ const Wrapper = styled.section`
 
 const Burger = (props) => {
   const { ingredients } = props;
-  const transformedIngredients = Object.keys(ingredients)
+
+  let transformedIngredients = Object.keys(ingredients)
     .map((ingKey) => [...Array(ingredients[ingKey])]
-      .map(() => <Ingredient key={shortid.generate()} type={ingKey} />));
+      .map(() => <Ingredient key={shortid.generate()} type={ingKey} />))
+    .reduce((arr, el) => arr.concat(el), []);
+
+  if (transformedIngredients.length === 0) {
+    transformedIngredients = <p>Please start building your burger!</p>;
+  }
 
   return (
     <Wrapper>
