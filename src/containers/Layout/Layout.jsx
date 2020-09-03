@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import PT from 'prop-types';
 
-import Aux from '../../hoc/Aux';
+import Aux from '../../hocs/Aux/Aux';
 import SideDrawer from '../../components/Navigation/SideDrawer/SideDrawer';
 import Toolbar from '../../components/Navigation/Toolbar/Toolbar';
 

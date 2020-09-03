@@ -17,9 +17,16 @@ const Backdrop = ({ showed, closed }) => (
   showed && <BackdropEl onClick={closed} />
 );
 
+Backdrop.defaultProps = {
+  showed: null,
+};
+
 Backdrop.propTypes = {
   closed: PT.func.isRequired,
-  showed: PT.bool.isRequired,
+  showed: PT.oneOfType([
+    PT.bool,
+    PT.object,
+  ]),
 };
 
 export default Backdrop;

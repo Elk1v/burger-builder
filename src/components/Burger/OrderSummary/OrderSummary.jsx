@@ -2,7 +2,7 @@ import React from 'react';
 import PT from 'prop-types';
 import shortid from 'shortid';
 
-import Aux from '../../../hoc/Aux';
+import Aux from '../../../hocs/Aux/Aux';
 import Button from '../../UI/Button/Button';
 
 const OrderSummary = ({

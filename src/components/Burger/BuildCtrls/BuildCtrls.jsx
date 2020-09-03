@@ -18,7 +18,7 @@ const Wrapper = styled.section`
 `;
 
 const enableAnimation = keyframes`
-      @keyframes enable {
+      enable {
       0% {
           transform: scale(1);
       }
