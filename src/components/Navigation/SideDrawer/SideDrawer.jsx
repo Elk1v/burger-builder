@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import PT from 'prop-types';
 
-import Aux from '../../../hoc/Aux';
+import Aux from '../../../hocs/Aux/Aux';
 import Backdrop from '../../UI/Backdrop/Backdrop';
 import Logo from '../../Logo/Logo';
 import NavigationItems from '../NavigationItems/NavigationItems';

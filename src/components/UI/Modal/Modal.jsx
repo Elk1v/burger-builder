@@ -1,7 +1,7 @@
 import React from 'react';
 import PT from 'prop-types';
 import styled from 'styled-components';
-import Aux from '../../../hoc/Aux';
+import Aux from '../../../hocs/Aux/Aux';
 import Backdrop from '../Backdrop/Backdrop';
 
 const Window = styled.div`
@@ -37,10 +37,19 @@ const Modal = ({ children, showed, modalClosed }) => (
   </Aux>
 );
 
+Modal.defaultProps = {
+  children: null,
+  modalClosed: null,
+  showed: null,
+};
+
 Modal.propTypes = {
-  children: PT.node.isRequired,
-  modalClosed: PT.func.isRequired,
-  showed: PT.bool.isRequired,
+  children: PT.node,
+  modalClosed: PT.func,
+  showed: PT.oneOfType([
+    PT.object,
+    PT.bool,
+  ]),
 };
 
 export default React.memo(Modal);
